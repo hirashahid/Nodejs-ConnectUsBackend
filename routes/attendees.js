@@ -8,5 +8,6 @@ module.exports = router;
 router.post("/", asyncHandler(attendeesCtrl.createAttendee));
 router.get("/", asyncHandler(attendeesCtrl.getAttendees));
 router.get("/:id", asyncHandler(attendeesCtrl.getAttendeeById));
-router.put("/:id" , asyncHandler(attendeesCtrl.updateAttendee))
-router.delete("/:id" , asyncHandler(attendeesCtrl.deleteAttendee))
+router.put("/:id" , asyncHandler(attendeesCtrl.updateAttendee));
+router.delete("/:id" , asyncHandler(attendeesCtrl.deleteAttendee));
+router.patch("/:id" , asyncHandler(attendeesCtrl.updateStatus));

@@ -8,6 +8,7 @@ module.exports = {
   getAttendeeById,
   updateAttendee,
   deleteAttendee,
+  updateStatus,
 };
 
 async function createAttendee(req, res , args) {
@@ -33,18 +34,26 @@ async function getAttendeeById(req, res) {
 }
 
 async function updateAttendee(req, res) {
-  let { id } = req.params;
-  id = Number(id);
-  let reqObject = req.body;
-  const { error } = attendeesValidator.attendeesSchema.validate(reqObject);
-  if (error !== undefined) {
-    return res.send({ message: `${CONST.INVALID_BODY}`, error });
-  }
-  let updateAttendee = await attendeesService.updateAttendee({
-    where: { id },
-    data:reqObject,
-  });
-  res.send(updateAttendee);
+  // let { id } = req.params;
+  // id = Number(id);
+  // let reqObject = req.body;
+  // const { error } = attendeesValidator.attendeesSchema.validate(reqObject);
+  // if (error !== undefined) {
+  //   return res.send({ message: `${CONST.INVALID_BODY}`, error });
+  // }
+  // let updateAttendee = await attendeesService.updateAttendee({
+  //   where: { id },
+  //   data:reqObject,
+  // });
+  // res.send(updateAttendee);
+}
+
+async function updateStatus(req, res) {
+  // let { id } = req.params;
+  // id = Number(id);
+  // let reqObject = req.body;
+  // console.log(`id: ${id}`)
+  // // console.log(reqObject);
 }
 
 async function deleteAttendee(req, res) {
